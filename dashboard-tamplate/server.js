@@ -14,8 +14,11 @@ app.use(express.json());
 app.use(cors());
 
 // app.use("/api", dashboardRouter);
+app.get("/", (req, res) => {
+  res.send("Dashboard backend is running!");
+});
 app.use("/api/setting", settingRouter);
-app.use("/api/statistics", statisticsRouter);
+app.use("/api/stats", statisticsRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
